@@ -62,6 +62,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 // ------------------------------
 // Routes
 // ------------------------------
+app.get("/", (req, res) => {
+  res.json({ message: "Hello from the API!" })
+})
 app.use("/auth", authRoutes)
 app.use("/users", userRoutes)
 app.use("/tasks", taskRoutes)
