@@ -29,12 +29,13 @@ const app = express()
 
 // Middleware to handle cors
 app.use(
-  cors({
-    // origin: process.env.FRONT_END_URL || "http://localhost:5174",
-    origin: "https://task-manager-tutorial.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
+  cors(
+  //   {
+  //   origin: process.env.FRONT_END_URL || "http://localhost:5174",
+  //   methods: ["GET", "POST", "PUT", "DELETE"],
+  //   credentials: true,
+  // }
+  )
 )
 
 // Middleware to handle JSON object in req body
