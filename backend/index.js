@@ -29,23 +29,17 @@ const app = express()
 
 // Middleware to handle cors
 app.use(
-  cors(
-  //   {
-  //   origin: process.env.FRONT_END_URL || "http://localhost:5174",
-  //   methods: ["GET", "POST", "PUT", "DELETE"],
-  //   credentials: true,
-  // }
-  )
+  cors({
+    origin: process.env.FRONT_END_URL || "http://localhost:5174",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
 )
 
 // Middleware to handle JSON object in req body
 app.use(express.json())
 
 app.use(cookieParser())
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000!")
-})
 
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
@@ -66,3 +60,5 @@ app.use((err, req, res, next) => {
     message,
   })
 })
+
+export default app
